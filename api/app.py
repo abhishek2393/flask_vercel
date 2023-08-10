@@ -1,10 +1,18 @@
-from flask import Flask
+from flask import Flask, request
+from flask_cors import CORS, cross_origin
+from dotenv import load_dotenv
+from os import getenv
+
+# BluePrints
+from blueprints.posts import posts
+from blueprints.ideas import ideas
+load_dotenv()
 app = Flask(__name__)
+CORS(app)
+# App Configurations
+app.config['OPENAI_API_KEY'] = getenv('OPENAI_API_KEY')
+app.register_blueprint(posts, url_prefix='/api/test')
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
 
-@app.route('/test')
-def test():
-    return 'i deploy first app on vercel'
+if __name__ == '__main__':
+    app.run('0.0.0.0', port=4100, debug=True)
