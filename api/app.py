@@ -9,8 +9,6 @@ from blueprints.ideas import ideas
 load_dotenv()
 app = Flask(__name__)
 CORS(app)
-# App Configurations
-app.config['OPENAI_API_KEY'] = getenv('OPENAI_API_KEY')
 app.register_blueprint(posts, url_prefix='/api/test')
 
 
