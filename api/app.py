@@ -7,4 +7,4 @@ def hello_world():
 
 @app.route('/test')
 def test():
-    return 'Test'
+    return 'i deploy first app on vercel'
