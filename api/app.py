@@ -1,10 +1,9 @@
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
-from dotenv import load_dotenv
-from os import getenv
+
 
 # BluePrints
-from blueprints.test import test
+from req.test import test
 
 
 app = Flask(__name__)
