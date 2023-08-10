@@ -1,10 +1,10 @@
-from pprint import pprint
-from flask import Blueprint, jsonify, request
+
+from flask import Blueprint
 
 test = Blueprint('test', __name__)
 
 
 
-@test.route('/thoughts', methods=['POST'])
+@test.route('/thoughts', methods=['GET'])
 def thoughts():
     return 'Hello World!'
